@@ -7,6 +7,15 @@ public class UnliCallTextPackage implements TelcoVisitor {
 
     // cache formatted descriptions by telco name
     private final Map<String, String> cache = new HashMap<>();
+    // static mapping of telco names to messages when unlimited is available
+    private static final Map<String, String> descriptions = new HashMap<>();
+    static {
+        descriptions.put("Smart", "Unlimited calls and texts.");
+        descriptions.put("Globe",
+                "Unlimited calls and texts. This plan comes with unlimited calls and texts to subscribers within their network. Calls and texts to other networks are charged extra.");
+        descriptions.put("Ditto",
+                "Unlimited calls and texts. This plan includes unlimited calls and texts to all networks within the country.");
+    }
 
     @Override
     public String visit(Telco telco) {
@@ -22,20 +31,7 @@ public class UnliCallTextPackage implements TelcoVisitor {
         if (!unli) {
             result = "No unlimited calls and texts. They do not offer any free calls or texts, and you will be charged per use.";
         } else {
-            switch (telcoName) {
-                case "Smart":
-                    result = "Unlimited calls and texts.";
-                    break;
-                case "Globe":
-                    result = "Unlimited calls and texts. This plan comes with unlimited calls and texts to subscribers within their network. Calls and texts to other networks are charged extra.";
-                    break;
-                case "Ditto":
-                    result = "Unlimited calls and texts. This plan includes unlimited calls and texts to all networks within the country.";
-                    break;
-                default:
-                    result = "Unknown Telco";
-                    break;
-            }
+            result = descriptions.getOrDefault(telcoName, "Unknown Telco");
         }
 
         cache.put(telcoName, result);
