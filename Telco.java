@@ -31,6 +31,19 @@ public class Telco implements TelcoSubscription {
         return dataAllowance;
     }
 
+    /**
+     * Return a map of this telco's basic properties. Useful for clients
+     * that prefer a generic lookup rather than calling getters individually.
+     */
+    public java.util.Map<String, Object> getAttributes() {
+        java.util.Map<String, Object> map = new java.util.HashMap<>();
+        map.put("name", telcoName);
+        map.put("price", promoPrice);
+        map.put("allowance", dataAllowance);
+        map.put("unliOffer", unliOffer);
+        return map;
+    }
+
     // visitor acceptors
     @Override
     public String accept(TelcoVisitor visitor) {
