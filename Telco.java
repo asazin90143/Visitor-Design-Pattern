@@ -25,7 +25,6 @@ public class Telco implements TelcoSubscription {
         return unliCallText;
     }
 
-    @Override
     public int getDataAllowance() {
         return dataAllowance;
     }
