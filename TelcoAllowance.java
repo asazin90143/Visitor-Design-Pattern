@@ -1,5 +1,8 @@
 package VisitorPattern;
 
+import java.util.Map;
+import java.util.HashMap;
+
 public class TelcoAllowance implements TelcoVisitor {
 
     // cache of formatted strings per telco so we don't recompute every time
