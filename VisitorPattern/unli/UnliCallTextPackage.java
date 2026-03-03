@@ -1,10 +1,13 @@
-package VisitorPattern;
+package VisitorPattern.unli;
+
+import VisitorPattern.Telco;
+import VisitorPattern.TelcoVisitor;
 
 public class UnliCallTextPackage implements TelcoVisitor {
 
     @Override
     public String visit(Telco telco) {
-        boolean unli = telco.hasUnliCallText();
+        boolean unli = telco.getUnliOffer().hasUnlimited();
         String telcoName = telco.getTelcoName();
 
         if (!unli) {

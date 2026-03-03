@@ -1,16 +1,18 @@
 package VisitorPattern;
 
+import VisitorPattern.unli.UnliCallOffer;
+
 public class Telco implements TelcoSubscription {
     private final String telcoName;
     private final double promoPrice;
     private final int dataAllowance;
-    private final boolean unliCallText;
+    private final UnliCallOffer unliOffer;
 
-    public Telco(String telcoName, double promoPrice, int dataAllowance, boolean unliCallText) {
+    public Telco(String telcoName, double promoPrice, int dataAllowance, UnliCallOffer unliOffer) {
         this.telcoName = telcoName;
         this.promoPrice = promoPrice;
         this.dataAllowance = dataAllowance;
-        this.unliCallText = unliCallText;
+        this.unliOffer = unliOffer;
     }
 
     public String getTelcoName() {
@@ -21,8 +23,8 @@ public class Telco implements TelcoSubscription {
         return promoPrice;
     }
 
-    public boolean hasUnliCallText() {
-        return unliCallText;
+    public UnliCallOffer getUnliOffer() {
+        return unliOffer;
     }
 
     public int getDataAllowance() {

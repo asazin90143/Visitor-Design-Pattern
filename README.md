@@ -8,7 +8,7 @@ Imagine you are looking for a new mobile plan for your smartphone. Three major t
  **Globe:** Provides a data allowance of 10 GB for ₱450 per month. This plan comes with unlimited calls and texts to subscribers within their network. Calls and texts to other networks are charged extra.
  **Ditto:** Offers a data allowance of 8 GB for ₱400 per month. This plan includes unlimited calls and texts to all networks within the country.
 
-Implement the visitor design pattern based on the given diagram. Refer to this link. 
+Implement the visitor design pattern based on the given diagram. Refer to this link.
 
 ![alt text](image.png)
 
@@ -17,9 +17,10 @@ Test your codes before the given client program:
 ```java
 public class TelcoPromo {
   public static void main(String[] args) {
-    TelcoSubscription smart = new Telco(15, 500, Smart,false);
-    TelcoSubscription globe = new Telco(10, 450, Globe,true);
-    TelcoSubscription ditto = new Telco(8, 400, Ditto,true);
+    // import VisitorPattern.unli.UnliCallOffer and UnliCallTextPackage at top of file
+    TelcoSubscription smart = new Telco(15, 500, Smart,new UnliCallOffer(false));
+    TelcoSubscription globe = new Telco(10, 450, Globe,new UnliCallOffer(true));
+    TelcoSubscription ditto = new Telco(8, 400, Ditto,new UnliCallOffer(true));
 
     UsagePromo promo = new TelcoAllowance();
     UnliCallOffer unli = new UnliCallTextPackage();    
@@ -30,13 +31,13 @@ public class TelcoPromo {
 
     System.out.println("\nSmart unlimited calls and text package: " +
 
-                                  unli.showUnliCallsTextOffer(smart.getTelcoName(), smart.getUnliCallText()));
+                                  unli.showUnliCallsTextOffer(smart.getTelcoName(), smart.getUnliOffer().hasUnlimited()));
     System.out.println("Globe unlimited calls and text package: " +
 
-                                  unli.showUnliCallsTextOffer(globe.getTelcoName(), globe.getUnliCallText()));
+                                  unli.showUnliCallsTextOffer(globe.getTelcoName(), globe.getUnliOffer().hasUnlimited()));
     System.out.println("Ditto unlimited calls and text package: " +
 
-                                   unli.showUnliCallsTextOffer(ditto.getTelcoName(), ditto.getUnliCallText()));
+                                   unli.showUnliCallsTextOffer(ditto.getTelcoName(), ditto.getUnliOffer().hasUnlimited()));
   }
 }
 ```
