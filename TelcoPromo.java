@@ -8,10 +8,10 @@ public class TelcoPromo {
                 new Telco("Ditto", 400, 8, true)
         };
 
-        UsagePromo promo = new TelcoAllowance();
-        UnliCallsTextOffer unli = new UnliCallTextPackage();
+        // single visitor type used for different behaviors
+        TelcoVisitor promo = new TelcoAllowance();
+        TelcoVisitor unli = new UnliCallTextPackage();
 
-        // using visitor pattern
         for (TelcoSubscription telco : telcos) {
             System.out.println(telco.accept(promo));
         }

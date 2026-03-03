@@ -1,9 +1,9 @@
 package VisitorPattern;
 
-public class TelcoAllowance implements UsagePromo {
+public class TelcoAllowance implements TelcoVisitor {
     @Override
-    public String showAllowance(String telcoName, double price, int dataAllowance) {
-        return String.format("%s offers a data allowance of %dGB for ₱%.2f per month.", telcoName, dataAllowance,
-                price);
+    public String visit(TelcoSubscription telco) {
+        return String.format("%s offers a data allowance of %dGB for ₱%.2f per month.",
+                telco.getTelcoName(), telco.getDataAllowance(), telco.getPromoPrice());
     }
 }
