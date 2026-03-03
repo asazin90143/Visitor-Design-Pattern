@@ -1,6 +1,6 @@
 package VisitorPattern;
 
-import VisitorPattern.unli.UnliCallOffer;
+import VisitorPattern.UnliCallOffer;
 
 public class Telco implements TelcoSubscription {
     private final String telcoName;

@@ -1,7 +1,7 @@
 package VisitorPattern;
 
-import VisitorPattern.unli.UnliCallOffer;
-import VisitorPattern.unli.UnliCallTextPackage;
+import VisitorPattern.UnliCallOffer;
+import VisitorPattern.UnliCallTextPackage;
 
 public class TelcoPromo {
     public static void main(String[] args) {

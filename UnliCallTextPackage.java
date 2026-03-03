@@ -1,7 +1,4 @@
-package VisitorPattern.unli;
-
-import VisitorPattern.Telco;
-import VisitorPattern.TelcoVisitor;
+package VisitorPattern;
 
 public class UnliCallTextPackage implements TelcoVisitor {
 

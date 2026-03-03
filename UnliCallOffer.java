@@ -1,4 +1,4 @@
-package VisitorPattern.unli;
+package VisitorPattern;
 
 public class UnliCallOffer {
     private final boolean hasUnlimited;
