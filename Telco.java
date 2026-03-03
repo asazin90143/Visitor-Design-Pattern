@@ -3,8 +3,6 @@ package VisitorPattern;
 import java.util.Map;
 import java.util.HashMap;
 
-import VisitorPattern.UnliCallOffer;
-
 public class Telco implements TelcoSubscription {
     private final String telcoName;
     private final double promoPrice;
