@@ -30,13 +30,15 @@ public class Telco implements TelcoSubscription {
         return dataAllowance;
     }
 
+    // visitor acceptors
     @Override
-    public String accept(UsagePromo promo, double price) {
-        return promo.showAllowance(telcoName, price, dataAllowance);
+    public String accept(UsagePromo promo) {
+        // visitor will be provided data allowance and price through parameters
+        return promo.showAllowance(telcoName, promoPrice, dataAllowance);
     }
 
     @Override
-    public String accept(UnliCallsTextOffer unliPackage, boolean unliCallText) {
+    public String accept(UnliCallsTextOffer unliPackage) {
         return unliPackage.showUnliCallsTextOffer(telcoName, unliCallText);
     }
 }
