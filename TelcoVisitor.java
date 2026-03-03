@@ -1,5 +1,5 @@
 package VisitorPattern;
 
 public interface TelcoVisitor {
-    String visit(TelcoSubscription telco);
+    String visit(Telco telco);
 }

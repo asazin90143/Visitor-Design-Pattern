@@ -3,7 +3,7 @@ package VisitorPattern;
 public class UnliCallTextPackage implements TelcoVisitor {
 
     @Override
-    public String visit(TelcoSubscription telco) {
+    public String visit(Telco telco) {
         boolean unli = telco.hasUnliCallText();
         String telcoName = telco.getTelcoName();
 
